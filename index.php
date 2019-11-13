@@ -2,6 +2,6 @@
 
 echo "Hello World!";
 $nome="Erisson Correia";
-print($nome);
+echo $nome;
 </?>
 
