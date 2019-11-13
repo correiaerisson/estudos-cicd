@@ -2,6 +2,7 @@
 
 echo "Hello World!";
 $nome="Erisson Correia";
-<br>
+echo "<br>"
 printf("Criado por: %s", $nome);
+?>
 
