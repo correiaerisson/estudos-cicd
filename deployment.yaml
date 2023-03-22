@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: webserver-deployment
+  labels:
+    app: php-webserver
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: php-webserver
+  template:
+    metadata:
+      labels:
+        app: php-webserver
+    spec:
+      containers:
+      - name: phpdemo
+        image: pulsemanchaotix/phpdemo
+        ports:
+        - containerPort: 80
