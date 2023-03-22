@@ -31,6 +31,6 @@ spec:
     app: web-service
   ports:
   - name: http
-    port: 8088
+    port: 80
     targetPort: 80
     protocol: TCP
