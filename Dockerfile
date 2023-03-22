@@ -9,5 +9,5 @@ COPY src /var/www/html
 RUN chown -R www-data:www-data /var/www
 
 RUN apache2ctl graceful
-EXPOSE 8088
+EXPOSE 9090
 #ENTRYPOINT ["./.docker/entrypoint.sh"]
