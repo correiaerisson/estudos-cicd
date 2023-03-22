@@ -19,3 +19,18 @@ spec:
         image: pulsemanchaotix/phpdemo
         ports:
         - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+type:
+metadata:
+  labels:
+    name: php-webserver
+  name: php-webserver
+spec:
+  ports:
+  - name: "80"
+    port: 8888
+    targetPort: 80
+  selector:
+    name: php-webserver
