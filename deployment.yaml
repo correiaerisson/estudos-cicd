@@ -5,7 +5,7 @@ metadata:
   labels:
     app: php-webserver
 spec:
-  replicas: 1
+  replicas: 4
   selector:
     matchLabels:
       app: php-webserver
@@ -22,14 +22,13 @@ spec:
 ---
 apiVersion: v1
 kind: Service
-metadata:
-  labels:
-    name: php-webserver
-  name: php-webserver
 spec:
+  selector:
+    app: php-webserver
+  type: LoadBalancer
+  loadBalancerIP: 192.168.100.162
   ports:
-  - name: "80"
+  - name: http
     port: 8888
     targetPort: 80
-  selector:
-    name: php-webserver
+    protocol: TCP
