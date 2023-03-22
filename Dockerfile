@@ -10,4 +10,4 @@ RUN chown -R www-data:www-data /var/www
 
 RUN apache2ctl graceful
 EXPOSE 80
-ENTRYPOINT ["./.docker/entrypoint.sh"]
+#ENTRYPOINT ["./.docker/entrypoint.sh"]
