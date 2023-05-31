@@ -1,0 +1,5 @@
+python-vlc>=3.0.18
+pygame>=1.9.5
+pafy
+moviepy
+youtube_dl

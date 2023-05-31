@@ -1,0 +1,45 @@
+version: "2.1"
+services:
+  guacd:
+    image: glyptodon/guacd
+    container_name: guacd
+    environment:
+      - GUACD_HOSTNAME=127.0.0.1
+      - ACCEPT_EULA=Y
+    ports:
+      - 4822:4822
+    restart: unless-stopped
+    volumes:
+      - /recordings:/recordings
+  postgres:
+    image: bitnami/postgresql:latest
+    container_name: db
+    env_file: variables.env
+    ports:
+      - 5432:5432
+    restart: unless-stopped
+  guacenc:
+    image: bytepen/guacenc
+    restart: unless-stopped
+    volumes:
+      - /recordings:/recordings
+  guacamole:
+    environment:
+      - POSTGRES_HOSTNAME=db
+      - POSTGRES_DBNAME=guacamole_db
+      - POSTGRES_DATABASE=guacamole_db
+      - POSTGRES_USERNAME=guacamole_user
+      - POSTGRES_USER=guacamole_user
+      - POSTGRES_PASSWORD=789Trocar
+      - GUACD_HOSTNAME=localhost
+    image: guacamole/guacamole:latest
+    container_name: guacamole
+    expose:
+      - 8080
+    ports:
+      - 8080:8080
+    restart: unless-stopped
+    depends_on:
+      - postgres
+      - guacd
+      - guacenc

@@ -1,0 +1,36 @@
+{
+    "00001": [
+        {
+            "name": "Teste Song",
+            "file": "songs/0001.mkv",
+            "artist": "John",
+            "url": "none"
+        }
+    ],
+    "00002": [
+        {
+            "name": "Teste Song 2",
+            "file": "songs/teste2.mp3",
+            "artist": "Bill",
+            "url": "none"
+        }
+    ],
+    "04111": [
+        {
+            "name": "EU TE DEVORO",
+            "file": "songs/04111.mkv",
+            "artist": "DJAVAN",
+            "url": "https://www.youtube.com/watch?v=8EdFP0aRAiE"
+        }
+    ],
+    "03467": [
+        {
+            "name": "ANGRA DOS REIS",
+            "file": "songs/3467.mkv",
+            "artist": "Legião Urbana",
+            "url": "none"
+        }
+    ]
+    
+    
+}
