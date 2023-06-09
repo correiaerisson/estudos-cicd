@@ -1,0 +1,39 @@
+services:
+  elastix4:
+    container_name: "elastix4"
+    entrypoint:
+      - "/bin/sh"
+      - "-c"
+      - "/entrypoint.sh"
+    environment:
+      - "PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin"
+    hostname: "2498ffedd536"
+    image: "leandrocarneiro/elastix4"
+    ipc: "private"
+    labels:
+      build-date: "20170801"
+      license: "GPLv2"
+      name: "CentOS Base Image"
+      vendor: "CentOS"
+    logging:
+      driver: "json-file"
+      options: {}
+    mac_address: "02:42:ac:11:00:02"
+    network_mode: "bridge"
+    ports:
+      - "110:110/tcp"
+      - "123:123/udp"
+      - "143:143/tcp"
+      - "2727:2727/udp"
+      - "4190:4190/tcp"
+      - "443:443/tcp"
+      - "4559:4559/tcp"
+      - "4569:4569/udp"
+      - "5000:5000/udp"
+      - "5038:5038/tcp"
+      - "5060:5060/udp"
+      - "69:69/udp"
+      - "80:80/tcp"
+      - "993:993/tcp"
+      - "994:995/tcp"
+version: "3.6"
